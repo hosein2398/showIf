@@ -1,0 +1,17 @@
+{
+  "name": "showif",
+  "version": "1.0.0",
+  "description": "",
+  "main": "showIf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hosein2398 <hosein2398@gmail.com> (google.com)",
+  "license": "ISC",
+  "dependencies": {
+    "platform": "^1.3.4"
+  },
+  "devDependencies": {
+    "webpack": "^3.5.5"
+  }
+}
