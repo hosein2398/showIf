@@ -4,7 +4,8 @@ var platform = require('platform');
 var BROWSER_NAME = platform.name;
 var BROWSER_VERSION = platform.version;
 console.log(platform.name);
-console.log(BROWSER_VERSION.substr(0,2))
+console.log(BROWSER_VERSION.substr(0, 2))
+
 function iterate_to_hide(browser) {
     if (browser.length > 0) {
         for (var i = 0; i < browser.length; i++) {
@@ -36,7 +37,6 @@ function iterate_data_without_rule(browser, atname, browser_v) {
             if (patt.test(tocheck)) {
 
                 var newclassdata = browser[i].getAttribute(atname).replace(patt, " ");
-                console.log(newclassdata)
                 var t = renderRegex_for_data(browser[i], atname);
                 if (t.type === "greater" && t.version < browser_v) {
                     browser[i].setAttribute("class", lastclass + newclass);
@@ -88,7 +88,6 @@ function renderRegex(that) {
             type = "equal";
             break;
     }
-    console.log(type);
     return {
         version: value,
         type: type
@@ -113,7 +112,6 @@ function renderRegex_for_data(that, attr) {
             type = "equal";
             break;
     }
-    console.log(type);
     return {
         version: value,
         type: type
@@ -164,4 +162,15 @@ if (navigator.userAgent.includes("Firefox")) {
     iterate_data_without_rule(firefox_typical_data, "data-if-firefox", 55);
     iterate_to_hide(hide_if_firefox);
     iterate_class_with_v(fire_fox_class_with_v, 55);
+}
+
+module.exports = {
+    BROWSER_VERSION: BROWSER_VERSION,
+    BROWSER_NAME: BROWSER_NAME,
+    renderRegex_for_data: renderRegex_for_data,
+    iterate_to_show: iterate_to_show,
+    iterate_to_hide: iterate_to_hide,
+    iterate_data_without_rule : iterate_data_without_rule,
+    iterate_class_with_v : iterate_class_with_v,
+    renderRegex : renderRegex
 }
