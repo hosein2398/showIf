@@ -4,7 +4,7 @@
   "description": "",
   "main": "showIf.js",
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers Chrome"
+    "test": "./node_modules/.bin/karma start --single-run --browsers Chrome"
   },
   "author": "Hosein2398 <hosein2398@gmail.com> (google.com)",
   "license": "ISC",
