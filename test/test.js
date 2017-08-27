@@ -1,4 +1,4 @@
-var showif = require('../showif');
+var showif = require('./showif');
 var assert = require('assert');
 
 describe('ShowIf test', function () {
