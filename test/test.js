@@ -109,13 +109,21 @@ describe('ShowIf test', function () {
         assert.equal('block', element.style.display);
     });
 
-    // it('testing functionaly of iterate_class_with_v() not showing the tag', function () {
-    //     var element = document.createElement('div');
-    //     element.setAttribute("class", "show-if-chrome(<58)");
-    //     document.body.appendChild(element);
-    //     showif.iterate_class_with_v(document.querySelectorAll('[class^="show-if-chrome("]') , 60);
-    //     assert.equal('', element.style.display);
-    // });
+    it('testing functionaly of iterate_class_with_v() not showing the tag', function () {
+        var element = document.createElement('div');
+        element.setAttribute("class", "show-if-chrome(<58)");
+        document.body.appendChild(element);
+        showif.iterate_class_with_v(document.querySelectorAll('[class^="show-if-chrome("]') , 60);
+        assert.equal('none', element.style.display);
+    });
+
+    it('testing functionaly of iterate_class_with_v() not showing the tag (type 2)', function () {
+        var element = document.createElement('div');
+        element.setAttribute("class", "show-if-chrome(>58)");
+        document.body.appendChild(element);
+        showif.iterate_class_with_v(document.querySelectorAll('[class^="show-if-chrome("]') , 60);
+        assert.equal('block', element.style.display);
+    });
 
 
 });

@@ -2,9 +2,10 @@ var platform = require('platform');
 
 
 var BROWSER_NAME = platform.name;
-var BROWSER_VERSION = platform.version;
+// var BROWSER_VERSION = platform.version;
+var BROWSER_VERSION = platform.version.substr(0, 2);
 console.log(platform.name);
-console.log(BROWSER_VERSION.substr(0, 2))
+console.log(BROWSER_VERSION)
 
 function iterate_to_hide(browser) {
     if (browser.length > 0) {
@@ -58,14 +59,16 @@ function iterate_class_with_v(browser, browser_v) {
     if (browser.length > 0) {
         for (var i = 0; i < browser.length; i++) {
             var t = renderRegex(browser[i]);
+            console.log(t.version);
             if (t.type === "greater" && t.version < browser_v) {
                 browser[i].style.display = 'block';
-            }
-            if (t.type === "lower" && t.version > browser_v) {
+                console.log("greater")
+            } else if (t.type === "lower" && t.version > browser_v) {
                 browser[i].style.display = 'block';
-            }
-            if (t.type === "equal" && t.version == browser_v) {
+            } else if (t.type === "equal" && t.version == browser_v) {
                 browser[i].style.display = 'block';
+            } else {
+                browser[i].style.display = 'none';
             }
         }
     }
@@ -152,16 +155,16 @@ var firefox_typical_data = document.querySelectorAll("*[data-if-firefox]");
 /* if statments for browsers */
 if (navigator.userAgent.includes("Chrome")) {
     iterate_to_show(show_if_chrome);
-    iterate_data_without_rule(chrome_typical_data, "data-if-chrome", 56);
+    iterate_data_without_rule(chrome_typical_data, "data-if-chrome", BROWSER_VERSION);
     iterate_to_hide(hide_if_chrome);
-    iterate_class_with_v(chrome_class_with_v, 57);
+    iterate_class_with_v(chrome_class_with_v, BROWSER_VERSION);
 
 }
 if (navigator.userAgent.includes("Firefox")) {
     iterate_to_show(show_if_firefox);
-    iterate_data_without_rule(firefox_typical_data, "data-if-firefox", 55);
+    iterate_data_without_rule(firefox_typical_data, "data-if-firefox", BROWSER_VERSION);
     iterate_to_hide(hide_if_firefox);
-    iterate_class_with_v(fire_fox_class_with_v, 55);
+    iterate_class_with_v(fire_fox_class_with_v, BROWSER_VERSION);
 }
 
 module.exports = {
@@ -170,7 +173,7 @@ module.exports = {
     renderRegex_for_data: renderRegex_for_data,
     iterate_to_show: iterate_to_show,
     iterate_to_hide: iterate_to_hide,
-    iterate_data_without_rule : iterate_data_without_rule,
-    iterate_class_with_v : iterate_class_with_v,
-    renderRegex : renderRegex
+    iterate_data_without_rule: iterate_data_without_rule,
+    iterate_class_with_v: iterate_class_with_v,
+    renderRegex: renderRegex
 }
