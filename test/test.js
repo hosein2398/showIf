@@ -1,6 +1,4 @@
 var showif = require('../showif');
-// var showif = require.context('../showif', true)
-// import showif from  '../showif';
 var assert = require('assert');
 
 describe('ShowIf test', function () {
