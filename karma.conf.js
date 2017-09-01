@@ -28,7 +28,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'test/*.js': ['webpack'],
+      './test/*.js': ['webpack']
       // './showif.js' :['webpack']
       
     },
@@ -59,13 +59,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome','Chrome_without_security'],
-    customLaunchers: {
-      Chrome_without_security: {
-        base: 'Chrome',
-        flags: ['--disable-web-security']
-      }
-    },
+    browsers: ['Chrome','Firefox'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
