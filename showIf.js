@@ -120,36 +120,32 @@ function renderRegex_for_data(that, attr) {
         type: type
     }
 }
-/* data with rule */
-var chrome_data_with_rule = document.querySelectorAll('*[data-ifchrome]');
+
 /* Show if if with version in class */
 var fire_fox_class_with_v = document.querySelectorAll('[class^="show-if-firefox("]');
 var chrome_class_with_v = document.querySelectorAll('[class^="show-if-chrome("]');
-iterate_to_hide(fire_fox_class_with_v);
-iterate_to_hide(chrome_class_with_v);
+var ie_class_with_v = document.querySelectorAll('[class^="show-if-ie("]');
+var safary_class_with_v = document.querySelectorAll('[class^="show-if-safary("]');
 
 
 /* typical show if */
 var show_if_firefox = document.getElementsByClassName("show-if-firefox");
-iterate_to_hide(show_if_firefox);
-
 var show_if_chrome = document.getElementsByClassName("show-if-chrome");
-iterate_to_hide(show_if_chrome);
-
 var show_if_ie = document.getElementsByClassName("show-if-ie");
-iterate_to_hide(show_if_ie);
-
+var show_if_safay = document.getElementsByClassName("show-if-safary");
 
 
 /* typical hide if */
 var hide_if_firefox = document.getElementsByClassName("hide-if-firefox");
 var hide_if_chrome = document.getElementsByClassName("hide-if-chrome");
 var hide_if_ie = document.getElementsByClassName("hide-if-ie");
-
+var hide_if_safary = document.getElementsByClassName("hide-if-safary");
 
 /* typical data change class */
 var chrome_typical_data = document.querySelectorAll("*[data-if-chrome]");
 var firefox_typical_data = document.querySelectorAll("*[data-if-firefox]");
+var ie_typical_data = document.querySelectorAll("*[data-if-ie]");
+var safary_typical_data = document.querySelectorAll("*[data-if-safary]");
 
 
 /* if statments for browsers */
@@ -165,6 +161,18 @@ if (navigator.userAgent.includes("Firefox")) {
     iterate_data_without_rule(firefox_typical_data, "data-if-firefox", BROWSER_VERSION);
     iterate_to_hide(hide_if_firefox);
     iterate_class_with_v(fire_fox_class_with_v, BROWSER_VERSION);
+}
+if (navigator.userAgent.includes("IE")) {
+    iterate_to_show(show_if_ie);
+    iterate_data_without_rule(ie_typical_data, "data-if-ie", BROWSER_VERSION);
+    iterate_to_hide(hide_if_ie);
+    iterate_class_with_v(ie_class_with_v, BROWSER_VERSION);
+}
+if (navigator.userAgent.includes("Safary")) {
+    iterate_to_show(show_if_safary);
+    iterate_data_without_rule(safary_typical_data, "data-if-safary", BROWSER_VERSION);
+    iterate_to_hide(hide_if_safary);
+    iterate_class_with_v(safary_class_with_v, BROWSER_VERSION);
 }
 
 module.exports = {
