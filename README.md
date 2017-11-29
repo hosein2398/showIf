@@ -20,6 +20,8 @@ For first one you need to add wanted className to the element for instance if yo
 ```
 So they are obvious enough to understand.
 
+---
+
 For second approach which you can also define the browser's version here goes an example:
 ```html
  <div class="show-if-firefox(>56) otherclass"> Lorem!.... </div>
@@ -36,6 +38,8 @@ Absolutely you can do contrary like :
 ```
 This will be hidden in Chrome with version less than 55 . (or shown in Chrome with v. higher than 55)
 
+---
+
 Now the third approach , which you can define your condition and also the class  you want to be embedded when that condition goes right : 
 ```html
 <p data-if-chrome="myclass"> Yeah </p>
@@ -44,9 +48,13 @@ So this will add class of `myclass` to this tag if user is in Chrome. Let's see 
 ```html
  <div data-if-chrome="(>54) myclass bold-it"> Sunday </div>
 ```
-So this will add the classes `myclass` and `bold-it` to this element if user's in Chrome and it's version is higher that 54. Now last one:
+So this will add the classes `myclass` and `bold-it` to this element if user's in Chrome and it's version is higher that 54.
+
+---
+
+Now last one:
 
 ```html
 <p data-if-chrome="(=56) reddy"> Working on it </p>
 ```
-This one will have `reddy` class only in Chrome 56.
+This one will have `reddy` class only in Chrome 56. Which is quite usefull.
