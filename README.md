@@ -58,3 +58,6 @@ Now last one:
 <p data-if-chrome="(=56) reddy"> Working on it </p>
 ```
 This one will have `reddy` class only in Chrome 56. Which is quite usefull.
+
+## How this works 
+So , you as a designer might ask that how this library works. After looping throw elements if the condition is not met as the browser in use, then  display of none is added to that element.
