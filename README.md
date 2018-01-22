@@ -4,7 +4,7 @@
 
 Conditionally show/hide elements on your page depending on what user's browser is.
 
-##Installing
+## Installing
 ```
 npm i showif --save
 ```
