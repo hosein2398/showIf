@@ -8,7 +8,10 @@ Conditionally show/hide elements on your page depending on what user's browser i
 ```
 npm i showif --save
 ```
-
+and if you want to use in browser, you can use showif.js in dist folder:
+```
+<script src='./showif.js'></script>
+```
 ## Usage	
 There are three approaches to use this library.
 - Show/hide an element based on type of user's browser.
