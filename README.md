@@ -1,9 +1,13 @@
 
 
-# ShowIf
-![Build](https://img.shields.io/travis/hosein2398/showIf.svg) ![Dependencies](https://img.shields.io/david/hosein2398/showIf.svg) ![Devdependencies](https://img.shields.io/david/dev/hosein2398/showIf.svg)  ![Greenkeeper badge](https://badges.greenkeeper.io/hosein2398/showIf.svg)
+# ShowIf ![Build](https://img.shields.io/travis/hosein2398/showIf.svg) ![Dependencies](https://img.shields.io/david/hosein2398/showIf.svg) ![Devdependencies](https://img.shields.io/david/dev/hosein2398/showIf.svg)  ![Greenkeeper badge](https://badges.greenkeeper.io/hosein2398/showIf.svg)
 
 Conditionally show/hide elements on your page depending on what user's browser is.
+
+##Installing
+```
+npm i showif --save
+```
 
 ## Usage	
 There are three approaches to use this library.
